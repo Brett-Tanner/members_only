@@ -1,24 +1,39 @@
-# README
+# Model planning
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## User
 
-Things you may want to cover:
+### name STRING
+    - presence: true
+    - uniqueness: true
+    - format: {with: /[a-zA-Z0-9]+/, message: "only alphanumeric characters"}
+    - length: {minimum: 2}
 
-* Ruby version
+### password STRING
+    - presence: true
+    - format: {with: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/, message "must contain uppercase, lowercase and a number"}
+    - length: {minimum: 8}
+    - confirmation: true
 
-* System dependencies
+### password_confirmation
+    - presence: true
 
-* Configuration
+### email STRING
+    - presence: true
+    - uniqueness: true
 
-* Database creation
+### email_confirmation
+    - presence: true
 
-* Database initialization
+## Post
 
-* How to run the test suite
+### user_id FOREIGN_KEY
+    - presence: true
+    - validates_associated :user
 
-* Services (job queues, cache servers, search engines, etc.)
+### title STRING
+    - presence: true
+    - length: {minimum: 2}
 
-* Deployment instructions
-
-* ...
+### body TEXT
+    - presence: true
+    - length: {minimum: 10}
