@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :require_login, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create]
 
   def index
     @posts = Post.all.order('created_at DESC')
@@ -14,8 +14,4 @@ class PostsController < ApplicationController
   end
 
   private
-
-  def require_login
-    
-  end
 end
