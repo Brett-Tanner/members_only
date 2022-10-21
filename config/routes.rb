@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create]
   resources :posts, only: [:new, :create, :index]
+
+  get "users/user_posts", to: "users#user_posts", as: "user_posts"
 end
