@@ -27,6 +27,10 @@
     <div id="sidebar">
       <%= yield :sidebar %>
 
+      <li id="new_post_nav">
+        <h3><%= link_to "New Post", new_post_path %></h3>
+      </li>
+
       <% unless user_signed_in? %>
         <li id="sign_in_nav">
           <h3><%= link_to "Sign up", new_user_session_path %></h3>

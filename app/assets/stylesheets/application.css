@@ -20,8 +20,8 @@
     font-family: Arial, Helvetica, sans-serif;
     --sidebar-color: blue;
     --sidebar-hover-color: rgb(0, 0, 181);
-    --heading-size: 20rem;
-    --content-size: 12rem;
+    --heading-size: min(20rem, 4vw);
+    --content-size: min(12rem, 3vw);
     --default-font-color: black;
 }
 
@@ -31,7 +31,7 @@ a {
 }
 
 h1 {
-    font-size: 30rem;
+    font-size: min(30rem, 6vw);
     margin: 0;
 }
 
@@ -48,15 +48,29 @@ p {
 
 .notice,
 .alert {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
     height: min-content;
     width: min-content;
+    font-size: var(--content-size);
+    border-radius: 5rem;
+    /* padding: 1vw; */
+    z-index: 10;
+}
+
+.notice {
+    background-color: aquamarine;
+}
+
+.alert {
+    background-color: salmon;
 }
 
 body {
     height: 100vh;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 10vh 1fr;
+    grid-template-rows: min(10vw, 70px) 1fr;
 }
 
 #menu_button {
@@ -70,6 +84,8 @@ body {
 
 #menu_button img {
     filter: invert(0.9);
+    width: min(48px, 9vw);
+    height: auto;
 }
 
 #header {
@@ -94,7 +110,7 @@ body {
 #menu_button {
     color: aliceblue;
     display: block;
-    padding: 1.5vw;
+    padding: 1.1vw;
 }
 
 #sidebar a:hover {

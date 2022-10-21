@@ -1,9 +1,3 @@
-<% content_for :sidebar do %>
-    <li id="new_post_nav">
-      <h3><%= link_to "New Post", new_post_path %></h3>
-    </li>
-<% end %>
-
 <% @posts.each do |post| %>
     <%= link_to post_path(post), class: "posts" do %>
         <h2 class="post_title">
