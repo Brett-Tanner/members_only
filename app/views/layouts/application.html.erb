@@ -11,8 +11,47 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <p class="notice">
+      <%= notice %>
+    </p>
+    <p class="alert">
+      <%= alert %>
+    </p>
+
+    <%= link_to image_tag("menu.svg"), root_path, id: "menu_button" %>
+
+    <div id="header">
+      <h1><%= link_to "Members Only!", posts_path %></h1>
+    </div>
+
+    <div id="sidebar">
+      <%= yield :sidebar %>
+
+      <% unless user_signed_in? %>
+        <li id="sign_in_nav">
+          <h3><%= link_to "Sign up" %></h3>
+        </li>
+      <% end %>
+
+      <% unless user_signed_in? %>
+        <li id="sign_up_nav">
+          <h3><%= link_to "Sign in" %></h3>
+        </li>
+      <% end %>
+
+      <% if user_signed_in? %>
+        <li id="my_posts_nav">
+          <h3><%= link_to "My Posts", user_posts_path %></h3>
+        </li>
+
+        <li id="sign_out_nav">
+          <h3><%= link_to "Sign out", destroy_user_session_path %></h3>
+        </li>
+      <% end %>
+    </div>
+
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>

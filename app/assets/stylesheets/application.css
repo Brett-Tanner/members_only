@@ -13,3 +13,92 @@
  *= require_tree .
  *= require_self
  */
+
+:root {
+    font-size: 6.25%;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    --sidebar-color: blue;
+    --sidebar-hover-color: rgb(0, 0, 181);
+    --heading-size: 20rem;
+    --content-size: 12rem;
+    --default-font-color: black;
+}
+
+a {
+    text-decoration: none;
+    color: var(--default-font-color);
+}
+
+h1 {
+    font-size: 30rem;
+}
+
+
+h2,
+h3 {
+    font-size: var(--heading-size);
+}
+
+p {
+    font-size: var(--content-size);
+    margin: 0;
+}
+
+.notice,
+.alert {
+    height: min-content;
+    width: min-content;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 10vh 1fr;
+}
+
+#menu_button {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--sidebar-color);
+}
+
+#menu_button img {
+    filter: invert(0.9);
+}
+
+#header {
+    grid-column: 2 / 6;
+    grid-row: 1 / 2;
+    text-align: center;
+    box-shadow: 0rem 2rem 15rem gray;
+}
+
+#sidebar {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    background-color: var(--sidebar-color);
+}
+
+#sidebar a,
+#menu_button {
+    color: aliceblue;
+    display: block;
+    padding: 1.5vw;
+}
+
+#sidebar a:hover,
+#menu_button:hover {
+    background-color: var(--sidebar-hover-color);
+}
+
+
+
+main {
+    grid-column: 2 / 6;
+    grid-row: 2 / 3;
+}
