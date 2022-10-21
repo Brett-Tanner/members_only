@@ -5,7 +5,7 @@ class PostsController < ApplicationController
     @posts = Post.all.order('created_at DESC')
   end
   
-  def new 
+  def new
     @post = Post.new
     @user = current_user
   end

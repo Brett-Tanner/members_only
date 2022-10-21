@@ -1,8 +1,15 @@
-<%= @posts.each do |post| %>
+<% @posts.each do |post| %>
     <div class="post">
         <h2 class="post_title">
             <%= post.title %>
         </h2>
+        <h3 class="post_user">
+            <% if user_signed_in? %>
+                <%= post.user.name %>
+            <% else %>
+                Names are only visible to logged in users!
+            <% end %>
+        </h3>
         <p class="post_body">
             <%= post.body %>
         </p>
