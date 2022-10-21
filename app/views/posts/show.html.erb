@@ -1,3 +1,15 @@
 <% content_for :sidebar do %>
-    <%= render "sidebar_post_list" %>
+    <%= render "post_list" %>
 <% end %>
+
+<h2>
+    <%= @post.title %>
+</h2>
+
+<h3>
+    <%= @post.user.name %>
+</h3>
+
+<p>
+    <%= @post.body %>
+</p>

@@ -5,10 +5,11 @@
 <% end %>
 
 <% @posts.each do |post| %>
-    <div class="post">
+    <%= link_to post_path(post), class: "posts" do %>
         <h2 class="post_title">
             <%= post.title %>
         </h2>
+
         <h3 class="post_user">
             <% if user_signed_in? %>
                 <%= post.user.name %>
@@ -16,8 +17,9 @@
                 Names are only visible to logged in users!
             <% end %>
         </h3>
+
         <p class="post_body">
             <%= post.body %>
         </p>
-    </div>
+    <% end %>
 <% end %>

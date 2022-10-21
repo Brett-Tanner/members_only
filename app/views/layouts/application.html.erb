@@ -31,9 +31,7 @@
         <li id="sign_in_nav">
           <h3><%= link_to "Sign up", new_user_session_path %></h3>
         </li>
-      <% end %>
 
-      <% unless user_signed_in? %>
         <li id="sign_up_nav">
           <h3><%= link_to "Sign in", new_user_registration_path %></h3>
         </li>
@@ -47,8 +45,6 @@
         <li id="sign_out_nav">
           <h3><%= link_to "Sign out", destroy_user_session_path, data: {turbo_method: :delete} %></h3>
         </li>
-
-        <%# TODO: switch user, will need to go to destroy then sign in I guess %>
       <% end %>
     </div>
 

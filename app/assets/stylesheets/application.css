@@ -32,12 +32,13 @@ a {
 
 h1 {
     font-size: 30rem;
+    margin: 0;
 }
-
 
 h2,
 h3 {
     font-size: var(--heading-size);
+    margin: 0;
 }
 
 p {
@@ -74,13 +75,18 @@ body {
 #header {
     grid-column: 2 / 6;
     grid-row: 1 / 2;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     box-shadow: 0rem 2rem 15rem gray;
 }
 
 #sidebar {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
     background-color: var(--sidebar-color);
 }
 
@@ -91,12 +97,9 @@ body {
     padding: 1.5vw;
 }
 
-#sidebar a:hover,
-#menu_button:hover {
+#sidebar a:hover {
     background-color: var(--sidebar-hover-color);
 }
-
-
 
 main {
     grid-column: 2 / 6;
