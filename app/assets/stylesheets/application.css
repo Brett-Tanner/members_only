@@ -23,6 +23,7 @@
     --heading-size: min(20rem, 4vw);
     --content-size: min(12rem, 3vw);
     --default-font-color: black;
+    --default-padding: 1.1vw
 }
 
 a {
@@ -54,7 +55,7 @@ p {
     width: min-content;
     font-size: var(--content-size);
     border-radius: 5rem;
-    /* padding: 1vw; */
+    /* padding: var(--default-padding); */
     z-index: 10;
 }
 
@@ -70,7 +71,7 @@ body {
     height: 100vh;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: min(10vw, 70px) 1fr;
+    grid-template-rows: 10vh 90vh;
 }
 
 #menu_button {
@@ -110,7 +111,7 @@ body {
 #menu_button {
     color: aliceblue;
     display: block;
-    padding: 1.1vw;
+    padding: var(--default-padding);
 }
 
 #sidebar a:hover {
@@ -120,4 +121,6 @@ body {
 main {
     grid-column: 2 / 6;
     grid-row: 2 / 3;
+    height: 90vh;
+    overflow: scroll;
 }

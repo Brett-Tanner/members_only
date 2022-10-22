@@ -4,13 +4,13 @@
             <%= post.title %>
         </h2>
 
-        <h3 class="post_user">
+        <p class="post_user">
             <% if user_signed_in? %>
                 <%= post.user.name %>
             <% else %>
-                Names are only visible to logged in users!
+                Post author is only visible to logged in users!
             <% end %>
-        </h3>
+        </p>
 
         <p class="post_body">
             <%= post.body %>
