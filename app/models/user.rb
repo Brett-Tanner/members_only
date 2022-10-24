@@ -8,6 +8,6 @@ class User < ApplicationRecord
   
   validates :name, presence: true
   validates :name, uniqueness: true
-  validates :name, format: {with: /[a-zA-Z0-9]+/, message: "only alphanumeric characters"}
+  validates :name, format: {with: /[a-zA-Z0-9]+/, message: "can only be alphanumeric characters"}
   validates :name, length: {minimum: 2}
 end
