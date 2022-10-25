@@ -1,0 +1,19 @@
+<div class="form_container">
+    <p class="name_message">
+        Posting as <%= @user.name %>
+    </p>
+    
+    <%= form_with model: @post, id: "post_form" do |form| %>
+        <div id="form_title">
+            <%= form.label :title %>
+            <%= form.text_field :title %>
+        </div>
+    
+        <div id="form_body">
+            <%= form.label :body %>
+            <%= form.text_area :body %>
+        </div>
+    
+        <%= form.submit %>
+    <% end %>
+</div>

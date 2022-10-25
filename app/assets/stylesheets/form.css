@@ -12,6 +12,7 @@
 .form_container form {
     display: flex;
     flex-flow: column wrap;
+    align-items: center;
     gap: var(--default-padding);
 }
 
@@ -19,7 +20,8 @@
     font-weight: bold;
 }
 
-.form_container form input {
+.form_container form input, 
+.form_container form textarea {
     border-radius: 5rem;
 }
 
@@ -29,4 +31,15 @@
 
 #devise_shared_links {
     font-size: var(--content-size);
+}
+
+#post_form #form_body,
+#post_form #form_title {
+    width: 80%;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+#form_body textarea {
+    height: 30vh;
 }

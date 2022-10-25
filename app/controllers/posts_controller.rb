@@ -23,6 +23,23 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @posts = Post.all.order('created_at DESC')
+    @user = current_user
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+    @user = current_user
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+
+    if @post.destroy
+      redirect_to posts_path, notice: "#{@post.title} deleted successfully"
+    else
+      flash.alert "Failed to delete #{@post.title}"
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private

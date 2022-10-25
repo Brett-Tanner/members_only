@@ -9,9 +9,20 @@
 </h2>
 
 <h3>
-    <%= @post.user.name %>
+    <% if user_signed_in? %>
+        <%= @post.user.name %>
+    <% else %>
+        Post author is only visible to logged in users!
+    <% end %>
 </h3>
 
 <p>
     <%= @post.body %>
 </p>
+
+<% if @post.user == @user %>
+    <div id="post_options">
+        <%= link_to "Edit post", edit_post_path %>
+        <%= link_to "Delete post", post_path, data: {turbo_method: :delete} %>
+    </div>
+<% end %>
