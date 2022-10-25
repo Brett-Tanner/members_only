@@ -44,3 +44,26 @@
 #post_container #delete_link {
     grid-area: delete;
 }
+
+#sidebar_post_list {
+    padding: 0;
+    overflow: scroll;
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: var(--default-padding);
+}
+
+#sidebar_post_list a.posts {
+    padding: 0;
+}
+
+#sidebar_post_list li {
+    height: 2.5vw;
+    overflow: clip;
+    font-size: 1vw;
+}
+
+#sidebar_post_list li.post_title {
+    font-weight: bold;
+}

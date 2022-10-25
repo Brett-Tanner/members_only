@@ -1,19 +1,14 @@
 <% @posts.each do |post| %>
     <%= link_to post_path(post), class: "posts" do %>
-        <h2 class="post_title">
+        <li class="post_title sidebar">
             <%= post.title %>
-        </h2>
-
-        <p class="post_user">
             <% if user_signed_in? %>
-                <%= post.user.name %>
-            <% else %>
-                Post author is only visible to logged in users!
+               by <%= post.user.name %>
             <% end %>
-        </p>
+        </li>
 
-        <p class="post_body">
+        <li class="post_body sidebar">
             <%= post.body %>
-        </p>
+        </li>
     <% end %>
 <% end %>
