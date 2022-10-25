@@ -1,0 +1,46 @@
+#post_container {
+    width: 90%;
+    height: 90%;
+    box-shadow: 3rem 3rem 3rem gray;
+    background-color: var(--content-background);
+    padding: var(--default-padding);
+    gap: var(--default-padding);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr) 7fr 1fr;
+    grid-template-areas: "title title title title"
+    "author author author author"
+    "body body body body"
+    ". . edit delete";
+    text-align: center;
+}
+
+#post_container #post_title {
+    grid-area: title;
+    font-size: calc(var(--heading-size) * 2)
+}
+
+#post_container #post_author {
+    grid-area: author;
+}
+
+#post_container #post_body {
+    grid-area: body;
+    font-size: calc(var(--content-size) * 2);
+    overflow: scroll;
+}
+
+#post_container #delete_link,
+#post_container #edit_link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#post_container #edit_link {
+    grid-area: edit;
+}
+
+#post_container #delete_link {
+    grid-area: delete;
+}
