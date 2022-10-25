@@ -23,7 +23,8 @@
     --heading-size: min(20rem, 4vw);
     --content-size: min(12rem, 3vw);
     --default-font-color: black;
-    --default-padding: 1.1vw
+    --default-padding: 1.1vw;
+    --content-background: lightblue;
 }
 
 a {
@@ -123,4 +124,9 @@ main {
     grid-row: 2 / 3;
     height: 90vh;
     overflow: scroll;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--heading-size);
 }

@@ -5,12 +5,13 @@
     height: 90vh;
     padding: var(--default-padding);
     gap: var(--default-padding);
+    margin-top: var(--default-padding);
 }
 
 #index_container a.posts {
     border-radius: 5rem;
     box-shadow: 3rem 3rem 10rem gray;
-    background-color: lightblue;
+    background-color: var(--content-background);
     height: 30vh;
     padding: var(--default-padding);
     overflow: hidden;
